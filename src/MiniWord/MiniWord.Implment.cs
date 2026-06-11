@@ -288,7 +288,8 @@ namespace MiniSoftware
                         {
                             var first = pool.First();
                             var newText = first.Clone() as Text;
-                            newText.Text = s;
+                            newText.Text = sb.ToString();
+                            newText.Space = SpaceProcessingModeValues.Preserve;
                             first.Parent.InsertBefore(newText, first);
                             foreach (var t in pool)
                             {
